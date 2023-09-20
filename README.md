@@ -5,7 +5,8 @@
   Lin-CMS-Spring-boot
 </h1>
 
-<h4 align="center">一个简单易用的CMS后端项目 | <a href="http://doc.cms.talelin.com/" target="_blank">Lin-CMS-Spring-boot</a></h4>
+<h4 align="center">一个简单易用的CMS后端项目 | <a href="http://doc.cms.talelin.com/" target="_blank">
+Lin-CMS-Spring-boot</a></h4>
 <p align="center">
 
   <a href="https://spring.io/" rel="nofollow">
@@ -84,26 +85,45 @@ Lin CMS 也有自己的前端实现，强强联合为你助力。
 
 Lin CMS 提供大量的文档来帮助开发者使用
 
-
 ## 联系和交流
+
 ![](https://img.juzibiji.top/20200807155013.png)
+
 ## 注意事项
 
 - Lin CMS 需要一定的基础，至少你得有一定的 java 基础和数据库基础，并且比较熟悉spring-boot和mybatis，
-当然如果你是个 java 程序员，这些肯定都不在话下。
+  当然如果你是个 java 程序员，这些肯定都不在话下。
 
 
 - Lin CMS 基于 spring boot ，因此也采取了 spring boot 的 starter （启动器）机制，我们也有自己的
-starter，见 [lin-cms-java-core](https://github.com/TaleLin/lin-cms-java-core.git)。 
+  starter，见 [lin-cms-java-core](https://github.com/TaleLin/lin-cms-java-core.git)。
 
 ## 贡献代码
 
 我们的代码基于 develop 分支开发，欢迎提交 Pull Request 进行代码贡献。
 
-在提交 Pull Request 之前，请详细阅读我们的[开发规范](https://doc.cms.talelin.com/specification/)，否则可能因为 Commit 信息不规范等原因被关闭 Pull Request。
-
-
+在提交 Pull Request 之前，请详细阅读我们的[开发规范](https://doc.cms.talelin.com/specification/)，否则可能因为 Commit
+信息不规范等原因被关闭 Pull Request。
 
 ## 开源协议
 
-[MIT](LICENSE) © 2021  林间有风
+[MIT](LICENSE) © 2021 林间有风
+
+---
+
+# Marine Vessel Pay
+
+Marine Vessel Pay is a payment facilitator that connects buyers and sellers. It fully utilizes MasterCard's In Control
+for Commercial Payments as the card generator and Cybersource as the payment processor. With this solution, Marine
+Vessel Pay aims to expedite the payment process between shipping companies, which can often be a tedious task.
+
+## Getting started
+
+### Flyway Migration
+
+```shell
+mvn flyway:clean
+mvn flyway:info
+mvn flyway:validate
+mvn flyway:migrate
+```

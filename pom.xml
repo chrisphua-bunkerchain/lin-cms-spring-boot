@@ -22,8 +22,10 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <mybatis-plus.version>3.4.1</mybatis-plus.version>
+        <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
         <freemarker.version>2.3.31</freemarker.version>
+        <!--Flyway Migration--> 
+        <flyway.version>8.5.13</flyway.version>
     </properties>
 
     <dependencies>
@@ -140,6 +142,26 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>${flyway.version}</version>
+                <configuration>
+                    <url>jdbc:mysql://localhost:3306/lin-cms?useSSL=false&amp;serverTimezone=UTC&amp;characterEncoding=UTF8</url>
+                    <user>root</user>
+                    <password>my-secret-pw</password>
+                    <schemas>
+                        <schema>lin-cms</schema>
+                    </schemas>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.flywaydb</groupId>
+                        <artifactId>flyway-mysql</artifactId>
+                        <version>${flyway.version}</version>
+                    </dependency>    
+                </dependencies>
             </plugin>
         </plugins>
     </build>
