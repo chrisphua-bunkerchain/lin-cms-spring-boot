@@ -7,9 +7,9 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 DROP TABLE IF EXISTS vp_invoice;
 CREATE TABLE vp_invoice (
-    invoice_id int PRIMARY KEY AUTO_INCREMENT,
+    invoice_id INT PRIMARY KEY AUTO_INCREMENT,
     invoice_number VARCHAR(20) NOT NULL,
-    buyer_id int NOT NULL,
+    buyer_id INT NOT NULL,
     invoice_date DATE NOT NULL,
     due_date DATE NOT NULL,
     total_amount DECIMAL(10, 2) NOT NULL,
@@ -30,10 +30,10 @@ FOREIGN KEY (buyer_id) REFERENCES vp_buyer(buyer_id);
 
 DROP TABLE IF EXISTS vp_invoice_item;
 CREATE TABLE vp_invoice_item (
-    item_id int PRIMARY KEY AUTO_INCREMENT,
-    invoice_id int NOT NULL,
+    item_id INT PRIMARY KEY AUTO_INCREMENT,
+    invoice_id INT NOT NULL,
     description VARCHAR(255) NOT NULL,
-    quantity int NOT NULL,
+    quantity INT NOT NULL,
     unit_price DECIMAL(10, 2) NOT NULL,
     total_price DECIMAL(10, 2) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

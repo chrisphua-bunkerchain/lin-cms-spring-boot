@@ -7,7 +7,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 DROP TABLE IF EXISTS vp_merchant;
 CREATE TABLE vp_merchant (
-    merchant_id int PRIMARY KEY AUTO_INCREMENT,
+    merchant_id INT PRIMARY KEY AUTO_INCREMENT,
     payment_process_merchant_id VARCHAR(255) NOT NULL,
     payment_processor_type tinyint(1) NOT NULL COMMENT '0: CYBERSOURCE',
     is_active tinyint(1) DEFAULT 0,

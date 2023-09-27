@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import io.github.talelin.autoconfigure.bean.PermissionMetaCollector;
 import io.github.talelin.latticy.common.interceptor.RequestLogInterceptor;
 import io.github.talelin.latticy.module.log.MDCAccessServletFilter;
+import org.apache.ibatis.session.ExecutorType;
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -40,9 +41,8 @@ public class CommonConfiguration {
     }
 
     @Bean
-    @SuppressWarnings("deprecation")
     public ConfigurationCustomizer configurationCustomizer() {
-        return configuration -> configuration.setUseDeprecatedExecutor(false);
+        return configuration -> configuration.setDefaultExecutorType(ExecutorType.SIMPLE);
     }
 
     @Bean
